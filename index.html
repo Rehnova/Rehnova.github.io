@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rehnova Portfolio</title>
+  <title>Anne's Webpage</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sansation&display=swap"
     rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -55,8 +58,8 @@
     }
 
     .nav__logo span {
-      color: rgb(250, 40, 75);
-      text-shadow: 0 1px 4px rgb(250, 40, 75);
+      color: rgb(151, 124, 54);
+      text-shadow: 0 1px 4px goldenrod;
     }
 
     .nav__toggle {
@@ -71,7 +74,7 @@
     .nav__toggle span {
       display: block;
       height: 3px;
-      background: white;
+      background: rgb(151, 124, 54);
       border-radius: 2px;
     }
 
@@ -82,18 +85,17 @@
     }
 
     .nav__link {
-      text-decoration: none;
+      text-decoration: dashed;
       color: white;
       transition: 0.3s;
     }
 
     .nav__link:hover {
-      color: rgb(250, 40, 75);
+      color: rgb(151, 124, 54);
     }
 
-    /* Backdrop overlay for mobile menu */
     .nav-backdrop {
-      display: none;
+      display: grid;
       position: fixed;
       inset: 0;
       background-color: transparent;
@@ -102,14 +104,12 @@
       opacity: 0;
       transition: 0.3s ease;
       pointer-events: none;
-      /* prevent clicks when hidden */
     }
 
     .nav-backdrop.active {
-      display: inline-block;
+      display: flex;
       opacity: 1;
       pointer-events: auto;
-      /* allow clicks when active */
     }
 
     .hero {
@@ -119,31 +119,10 @@
       justify-content: center;
       padding: 6rem 2rem 2rem;
       text-align: center;
+      background-repeat: no-repeat;
+
     }
 
-    .circle-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .circle {
-      width: 200px;
-      height: 200px;
-      background-color: transparent;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      ;
-    }
-    .circle img {
-      width: 130%;
-      height: 130%;
-      object-fit: cover;
-    }
 
     .icon-container {
       display: flex;
@@ -155,73 +134,52 @@
 
     .icon {
       font-size: 30px;
-      color: pink;
+      color: white;
       text-decoration: none;
       align-items: center;
       display: flex;
       gap: 100px;
       transition: transform 0.3s ease, text-shadow 0.3s ease;
-      text-shadow: 0 0 8px pink;
+      text-shadow: 0 0 8px goldenrod;
       margin-left: 2%;
     }
 
     .icon:hover {
       transform: scale(1.4);
-      text-shadow: 0 0 15px rgb(250, 40, 75), 0 0 25px rgb(250, 40, 75);
-      color: rgb(250, 40, 75);
+      text-shadow: 0 0 15px goldenrod, 0 0 25px goldenrod;
+      color: goldenrod;
     }
 
 
     .intro-text h1 {
-      font-size: 2rem;
+      font-size: 45px;
+      font-weight: 50;
+      margin-top: 2%;
+      font-family: 'orbitron', sans-serif;
+      text-shadow: 0 0 8px goldenrod;
+    }
+    .intro-text h6 {
+      font-size: 45px;
+      font-weight: 10;
       margin-top: 10%;
+      font-family: 'josefin sans', sans-serif;
+      text-shadow: 0 0 8px whitesmoke;
     }
 
-    .intro-text h1 span {
-      color: pink;
-      text-shadow: 0 0 15px rgb(250, 40, 75);
-    }
 
-    .intro-text h3 {
-      font-size: 1.3rem;
-      margin: 0.5rem 0;
-      position: static;
-    }
+
+
 
     .intro-text p {
-      color: white;
+      color: whitesmoke;
       margin-top: 5%;
+      font-family: 'josefin sans', sans-serif;
+
+      font-size: 1.2rem;
     }
 
-    /* Fixed wrapper to prevent shaking */
 
 
-    .intro-text h3 span#typewriter {
-      color: rgb(250, 40, 75);
-      font-weight: bold;
-      white-space: nowrap;
-      display: inline-block;
-    }
-
-    .intro-text h3 span {
-      /* No animation on "I'm a", only on #typewriter */
-      display: inline;
-    }
-
-    .intro-text p {
-      font-size: 1rem;
-    }
-
-    .intro-buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin: 2rem auto;
-      width: 100%;
-      max-width: 100%;
-      flex-wrap: wrap;
-    }
     .section {
       padding: 3rem 1rem;
       text-align: center;
@@ -236,48 +194,77 @@
     }
 
     @media (min: 768px) {
-  .header {
-      text-align: left;
-      left: 200px;
-      bottom: -50px;
-      padding: 100px 20px 50px;
-      position: relative;
-      z-index: 1;
-      font-size: 20px;
-    }
 
-    .logo-container {
-      position: relative;
-    }
 
-    
-    .intro h2 span {
-      color: pink;
-      font-weight: lighter;
-      text-shadow: 0 0 8px pink;
-      font-size: 50px;
+      .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        text-align: center;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+      }
 
-    }
-    .intro h2 {
-  font-size: 45px; /* Adjust the font size of the first line */
-  color: white; /* Adjust the color of the first line */
-  line-height: 1.5; /* Adjust the line height for spacing */
-  margin-bottom: 0; /* Add some space after the first line */
-}
+      .content {
+        z-index: 2;
+      }
 
-.intro h3 {
-  font-size: 20px; /* Adjust the font size of the second line */
-  color: white; /* Adjust the color of the second line */
-  margin-bottom: 10px; /* Space below the second line */
-}
+      .logo-container {
+        position: relative;
+      }
 
-.intro p {
-  font-size: 15px; /* Adjust the font size of the paragraph */
-  color: white; /* Adjust the color of the paragraph */
-  max-width: 500px;
-  line-height: 1.6;
-  margin-bottom: 0px;
-}
+      .circle-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0px;
+        z-index: 1;
+      }
+
+      .circle {
+        width: 200px;
+        height: auto;
+        background-color: transparent;
+        z-index: 1;
+
+
+      }
+
+      .circle img {
+        width: 400px;
+        height: auto;
+        object-fit: contain;
+        z-index: 1;
+      }
+
+      .intro h2 {
+        font-size: 45px;
+        /* Adjust the font size of the first line */
+        color: white;
+        /* Adjust the color of the first line */
+        line-height: 1.5;
+        /* Adjust the line height for spacing */
+        margin-bottom: 0;
+        /* Add some space after the first line */
+      }
+
+
+      .intro p {
+        font-size: 15px;
+        /* Adjust the font size of the paragraph */
+        color: whitesmoke;
+        /* Adjust the color of the paragraph */
+        max-width: 500px;
+        line-height: 1.6;
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
+
       .section {
         display: flex;
         width: 100%;
@@ -300,19 +287,19 @@
       background: rgb(61, 65, 65);
       border: 1px solid transparent;
       border-radius: 10px;
-      color: white;
+      color: goldenrod;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: rgb(250, 40, 75);
-      box-shadow: 0 0 10px rgb(250, 40, 75);
+      border-color: goldenrod;
+      box-shadow: 0 0 10px goldenrod;
     }
 
     .contact-form button {
-      background: pink;
-      color: rgb(250, 40, 75);
+      background: rgb(41, 37, 28);
+      color: goldenrod;
       padding: 0.6rem;
       border: none;
       border-radius: 30px;
@@ -323,52 +310,61 @@
     }
 
     .contact-form button :hover {
-      background: pink;
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 0 10px rgb(250, 40, 75), 0 0 10px rgb(250, 40, 75);
+      background: transparent;
+      color: goldenrod;
+      transform: translateY(-10px);
+      z-index: 1;
+      outline: none;
+      transition: 0.3s ease;
     }
 
     .slide-in-left,
     .slide-in-bottom {
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
+      transform: translateY(25px);
+      transition: all 1s ease-out;
     }
 
     .visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0px);
     }
 
     .buttons {
       display: flex;
-      justify-content: flex-start;
-      gap: 40px;
-      z-index: 10;
-      margin-top: 0px;
-      position: relative;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      width: 100%;
+      max-width: 100%;
+      flex-wrap: wrap;
     }
 
     .buttons .btn {
+      border: 2px solid goldenrod;
       background: transparent;
-      border: 1px solid rgb(250, 40, 75);
-      border-radius: 10px;
-      padding: 15px 25px;
-      font-size: 18px;
-      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
       color: white;
-      box-shadow: 0 0 0 transparent;
+      border-radius: 30px;
+      cursor: pointer;
       position: relative;
+      overflow: hidden;
       z-index: 1;
-      backdrop-filter: blur(3px);
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      min-width: 120px;
     }
 
-    .buttons :hover {
-       background: white;
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 20px rgb(250, 40, 75), 0 0 30px rgb(250, 40, 75);
-      text-shadow: 0 0 10px rgb(250, 40, 75);
+    .buttons .btn:hover {
+      background: transparent;
+      color: white;
+      transform: translateY(-10px);
+      z-index: 1;
+      outline: none;
+      transition: 0.3s ease;
     }
 
     .card-container {
@@ -394,8 +390,8 @@
       margin-bottom: 0px;
       font-size: 30px;
       text-align: center;
-      color: pink;
-      text-shadow: rgb(250, 40, 75) 0 0 10px;
+      color: white;
+      text-shadow: goldenrod 0 0 10px;
     }
 
     .card img {
@@ -425,6 +421,26 @@
         border: none;
       }
 
+      .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 2rem 2rem;
+        text-align: center;
+        background-image: url(imgs/Untitled\ design\ \(19\).png);
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+      }
+
+      .content {
+        z-index: 2;
+        margin-top: 103%;
+      }
+
       .card-title {
         font-size: 24px;
       }
@@ -436,6 +452,47 @@
 
     /* Mobile (even more compact) */
     @media (max-width: 480px) {
+      .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 2rem 2rem;
+        text-align: center;
+        background-image: url(imgs/Untitled\ design\ \(19\).png);
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-size: 250%;
+        background-position: center;
+        height: 100vh;
+      }
+
+      .circle-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+
+      .circle {
+        width: 0;
+        height: 0;
+        background-color: transparent;
+
+
+      }
+
+      .circle img {
+        width: 0;
+        height: 0;
+        object-fit: none;
+      }
+
+      .content {
+        z-index: 2;
+        margin-top: 103%;
+      }
+
       .card {
         padding: 0.5rem;
         border: none;
@@ -479,6 +536,27 @@
         transform: translateX(100%);
       }
 
+      .circle-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+
+      .circle {
+        width: 0px;
+        height: 0px;
+        background-color: transparent;
+
+
+      }
+
+      .circle img {
+        width: 0%;
+        height: 0%;
+        object-fit: none;
+      }
+
       .nav__list.active {
         display: flex;
         transform: translateX(0);
@@ -488,41 +566,21 @@
         display: flex;
       }
 
-      #typed {
-        color: pink;
+ #typed {
+        color: white;
         font-weight: bold;
         font-size: 30px;
       }
+
     }
   </style>
 </head>
 
 <body>
-  <div id="chatbot-icon" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 9999;
-    width: 150px;
-    height: auto;
-    transition: transform 0.3s ease;
-  " onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
-    <img src="imgs/chatbot icon.gif" alt="Chat Icon" style="
-      width: 100%;
-      height: 100%;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      display: block;
-    " />
-  </div>
-
-
 
   <header class="header">
     <nav>
-      <div class="nav__logo">REH<span>NOVA</span></div>
+      <div class="nav__logo"><span>RUBI </span>ANNE</div>
       <ul class="nav__list" id="nav-list">
         <li><a href="#home" class="nav__link">Home</a></li>
         <li><a href="#Education" class="nav__link">Education</a></li>
@@ -540,38 +598,48 @@
   </header>
 
   <section class="hero" id="home">
-    <div class="intro-text slide-in-left">
-      <h1>Hi, I'M <span>ANNE</span></h1>
-      <h1><span id="typed"></span></h1>
+    <div class="content">
+      <div class="circle-wrapper">
+        <div class="circle slide-in-bottom">
+          <img src="imgs/Untitled design (19).png" alt="">
+
+        </div>
+        <div class="intro-text slide-in-left">
+          <h6>IT'S ME</h6>
+          <h1>ANNE</h1>
+<h1><span id="typed"></span></h1>
       <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-      <p>Tech-Obsessed, Coding lover and dangerously knowledgeable. If i were a programming language, I'd be Python- Elegant, powerful and loved by all.My confidence would make compiler to ignore the syntax errors. And knowledge? I got stacks of it.</p>
-      <div class="icon-container slide-in-left">
-        <a href="mailto:rbrehanbhatti786@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
-        <a href="https://instagram.com/anne_rehnova" target="_blank" class="icon"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/923425040554" target="_blank" class="icon"><i class="fab fa-whatsapp"></i></a>
+          <p>Tech-Obsessed, Coding lover and dangerously knowledgeable. If i were a programming language, I'd be Python-
+            Elegant, powerful and loved by all.My confidence would make compiler to ignore the syntax errors. And
+            knowledge?
+            I got stacks of it.</p>
+          <div class="icon-container slide-in-left">
+            <a href="mailto:RehnovaTechLabs01@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
+            <a href="https://instagram.com/chloe_anne01" target="_blank" class="icon"><i
+                class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Rehnova" class="icon" target="_blank">
+  <i class="fab fa-github"></i>
+</a>
+
+            <a href="https://wa.me/923425040554" target="_blank" class="icon"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <div style="display: flex; justify-content: center; margin-top: 1rem;">
+            <div class="buttons slide-in-left">
+              <a href="#contact" class="btn">Avail Service</a>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div style="display: flex; justify-content: center; margin-top: 1rem;">
-  <div class="buttons slide-in-left">
-    <a href="#contact" class="btn">Send Me a Message</a>
-  </div>
-</div>
 
     </div>
-    <div class="circle-wrapper">
-      <div class="circle slide-in-bottom">
-        <img src="imgs/Untitled design (19).png" alt="Profile" />
-      </div>
     </div>
-
-    </div>
-
   </section>
 
   <section id="Education" class="section slide-in-left">
-  <h2 class="section-title slide-in-left" style="text-shadow:0 0 7px white;">Education</h2>
-  <div style="
+    <h2 class="section-title slide-in-left" style="color: goldenrod; text-shadow:0 0 8px goldenrod;">Education</h2>
+    <div style="
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -579,57 +647,57 @@
     margin-top: 2rem;
     padding: 0 1rem;
   ">
-    <div style="
-      border: 1px solid rgb(250, 40, 75);
+      <div style="
+      border: 1px solid goldenrod;
       border-radius: 25px;
       padding: 15px;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: rgba(233, 78, 163, 0.05);
+      background: rgb(41, 37, 28);
     ">
-      <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px white;">
-        Diploma in ML and Deep Learning
-      </h3>
-      <p>Coursera</p>
-      <p style="font-size: 14px; margin: 5%; color: #ccc;">2023 - 2024</p>
-    </div>
+        <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
+          Diploma in ML and Deep Learning
+        </h3>
+        <p>Coursera</p>
+        <p style="font-size: 14px; margin: 5%; color: #ccc;">2023 - 2024</p>
+      </div>
 
-    <div style="
-      border: 1px solid rgb(250, 40, 75);
+      <div style="
+      border: 1px solid goldenrod;
       border-radius: 20px;
       padding: 15px;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: rgba(233, 78, 163, 0.05);
+      background: rgb(41, 37, 28);
 
 ">
-      <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px white;">
-        Diploma in Data Analysis
-      </h3>
-      <p>Coursera</p>
-      <p style="font-size: 14px; margin: 5%; color: #ccc;">2023</p>
-    </div>
+        <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
+          Diploma in Data Analysis
+        </h3>
+        <p>Coursera</p>
+        <p style="font-size: 14px; margin: 5%; color: #ccc;">2022 - 2023</p>
+      </div>
 
-    <div style="
-      border: 1px solid rgb(250, 40, 75);
+      <div style="
+      border: 1px solid goldenrod;
       border-radius: 20px;
       padding: 15px;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: rgba(233, 78, 163, 0.05)
+      background: rgb(41, 37, 28)
     ">
-      <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px white;">
-        Intermediate in Pre-Engineering
-      </h3>
-      <p>Punjab College Islamabad</p>
-      <p style="font-size: 14px; margin: 5%; color: #ccc;">2022 - 2023</p>
+        <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
+          Intermediate in Pre-Engineering
+        </h3>
+        <p>Punjab College Islamabad</p>
+        <p style="font-size: 14px; margin: 5%; color: #ccc;">2022 - 2023</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <section id="services" class="section slide-in-left">
-    <h2 class="section-title slide-in-left" style="text-shadow:0 0 7px white;">Hobbies</h2>
+    <h2 class="section-title slide-in-left" style="color: goldenrod; text-shadow:0 0 8px goldenrod;">Hobbies</h2>
     <div class="card-container">
       <div class="card">
         <h3 class="card-title">Books Reading</h3>
@@ -650,7 +718,7 @@
   </section>
 
   <section id="expertise" class="section slide-in-left">
-    <h2 class="section-title slide-in-left" style="text-shadow:0 0 7px white;">Expertise</h2>
+    <h2 class="section-title slide-in-left" style="color: goldenrod; text-shadow:0 0 8px goldenrod;">Expertise</h2>
     <div class="card-container">
       <div class="card">
         <h3 class="card-title">AI Automation</h3>
@@ -660,7 +728,7 @@
         <h3 class="card-title">Chatbot Development</h3>
         <img src="imgs/chatbot.png" alt="Image 1">
       </div>
-     
+
       <div class="card">
         <h3 class="card-title">Web Development</h3>
         <img src="imgs/Untitled design (15).png" alt="Image 3">
@@ -671,10 +739,9 @@
       </div>
   </section>
   <section id="contact" class="section slide-in-bottom">
-    <h2 class="section-title slide-in-bottom" style="text-shadow:0 0 7px white;">Contact<span style="color: rgb(250, 40, 75); text-shadow:0 0 7px rgb(250, 40, 75);"> Me</h2>
-    <form class="contact-form slide-in-bottom" id="contact-form" 
-  action="https://formspree.io/f/manoblnb" 
-  method="POST">
+    <h2 class="section-title slide-in-bottom" style="text-shadow:0 0 7px white;">Contact<span
+        style="color: goldenrod; text-shadow:0 0 7px goldenrod;"> Me</h2>
+    <form class="contact-form slide-in-bottom" id="contact-form" action="https://formspree.io/f/manoblnb" method="POST">
       <input type="name" name="name" placeholder="Full Name">
       <input type="email" name="email" placeholder="Email">
       <input type="text" name="Message" placeholder="Subject">
@@ -683,36 +750,36 @@
     </form>
   </section>
   <script>
-  const form = document.getElementById('contact-form');
-  const messageDiv = document.createElement('div');
-  form.parentNode.insertBefore(messageDiv, form.nextSibling); // put message below form
+    const form = document.getElementById('contact-form');
+    const messageDiv = document.createElement('div');
+    form.parentNode.insertBefore(messageDiv, form.nextSibling); // put message below form
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const formData = new FormData(form);
+      const formData = new FormData(form);
 
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
 
-      if (response.ok) {
-        messageDiv.textContent = 'Thank you! Your message has been sent.';
-        messageDiv.style.color = 'pink'; 
-        form.reset();
-      } else {
+        if (response.ok) {
+          messageDiv.textContent = 'Thank you! Your message has been sent.';
+          messageDiv.style.color = 'pink';
+          form.reset();
+        } else {
+          messageDiv.textContent = 'Oops! There was a problem submitting your form.';
+          messageDiv.style.color = 'red';
+        }
+      } catch (error) {
         messageDiv.textContent = 'Oops! There was a problem submitting your form.';
         messageDiv.style.color = 'red';
       }
-    } catch (error) {
-      messageDiv.textContent = 'Oops! There was a problem submitting your form.';
-      messageDiv.style.color = 'red';
-    }
-  });
-</script>
+    });
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
   <script>
@@ -727,17 +794,9 @@
         }
       });
     }, {
-      threshold: 0.5
+      threshold: 0.6
     });
     slideElements.forEach(el => observer.observe(el));
-
-
-    var typed = new Typed("#typed", {
-      strings: ["Distinct", "Happy", "Young"],
-      typeSpeed: 150,
-      backSpeed: 40,
-      loop: true,
-    });
 
 
     const navToggle = document.getElementById('nav-toggle');
@@ -766,10 +825,15 @@
         navBackdrop.classList.remove('active');
       });
     });
+     var typed = new Typed("#typed", {
+      strings: ["Distinct", "Happy ", "Young", "Optimist"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true,
+    });
   </script>
 </body>
-<footer class="footer" style="color: gray;">
-  &copy; 2025 Anne'sTechLabs. All rights reserved.
+<footer class="footer" style="color: rgb(90, 75, 39);">
+  &copy; 2025  All rights reserved. Developer: Aroob Fatima
 </footer>
-
 </html>
