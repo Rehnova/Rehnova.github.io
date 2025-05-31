@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anne's Webpage</title>
+  <title>ANNE's Webpage</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -58,8 +58,8 @@
     }
 
     .nav__logo span {
-      color: rgb(151, 124, 54);
-      text-shadow: 0 1px 4px goldenrod;
+      color: rgb(0, 116, 116);
+      text-shadow: 0 1px 4px cyan;
     }
 
     .nav__toggle {
@@ -74,7 +74,7 @@
     .nav__toggle span {
       display: block;
       height: 3px;
-      background: rgb(151, 124, 54);
+      background: white;
       border-radius: 2px;
     }
 
@@ -91,7 +91,7 @@
     }
 
     .nav__link:hover {
-      color: rgb(151, 124, 54);
+      color: cyan;
     }
 
     .nav-backdrop {
@@ -140,14 +140,14 @@
       display: flex;
       gap: 100px;
       transition: transform 0.3s ease, text-shadow 0.3s ease;
-      text-shadow: 0 0 8px goldenrod;
+      text-shadow: 0 0 8px cyan;
       margin-left: 2%;
     }
 
     .icon:hover {
       transform: scale(1.4);
-      text-shadow: 0 0 15px goldenrod, 0 0 25px goldenrod;
-      color: goldenrod;
+      text-shadow: 0 0 15px cyan, 0 0 25px cyan;
+      color: cyan;
     }
 
 
@@ -156,7 +156,7 @@
       font-weight: 50;
       margin-top: 2%;
       font-family: 'orbitron', sans-serif;
-      text-shadow: 0 0 8px goldenrod;
+      text-shadow: 0 0 8px cyan;
     }
     .intro-text h6 {
       font-size: 45px;
@@ -269,6 +269,9 @@
         display: flex;
         width: 100%;
       }
+      .card-title{
+        font-size: 60px;
+      }
     }
 
 
@@ -284,22 +287,22 @@
     .contact-form input,
     .contact-form textarea {
       padding: 0.8rem;
-      background: rgb(61, 65, 65);
+      background: rgb(63, 63, 63);
       border: 1px solid transparent;
       border-radius: 10px;
-      color: goldenrod;
+      color: white;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: goldenrod;
-      box-shadow: 0 0 10px goldenrod;
+      border-color: cyan;
+      box-shadow: 0 0 10px cyan;
     }
 
     .contact-form button {
-      background: rgb(41, 37, 28);
-      color: goldenrod;
+      background: rgb(0, 72, 85);
+      color: white;
       padding: 0.6rem;
       border: none;
       border-radius: 30px;
@@ -311,7 +314,7 @@
 
     .contact-form button :hover {
       background: transparent;
-      color: goldenrod;
+      color: cyan;
       transform: translateY(-10px);
       z-index: 1;
       outline: none;
@@ -342,31 +345,31 @@
     }
 
     .buttons .btn {
-      border: 2px solid goldenrod;
-      background: transparent;
-      color: white;
+      background: rgb(53, 66, 68);
+      color: powderblue;
       border-radius: 30px;
       cursor: pointer;
+      text-decoration: none;
       position: relative;
       overflow: hidden;
       z-index: 1;
-      transition: color 0.3s ease;
+      transition: 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem 1rem;
+      padding: 1rem 1rem;
       min-width: 120px;
     }
 
     .buttons .btn:hover {
-      background: transparent;
-      color: white;
-      transform: translateY(-10px);
-      z-index: 1;
-      outline: none;
+      background: cyan;
+      color: black;
+      transform:  translateY(-10px);
+      z-index: 2;
+      outline:none;
       transition: 0.3s ease;
     }
-
+ 
     .card-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -376,8 +379,8 @@
 
     .card {
       padding: 1.2rem;
-      border: none;
-      border-radius: 10px;
+      border: 1px solid cyan;
+      border-radius: 60px;
       transition: all 0.3s ease;
       background: transparent;
       display: flex;
@@ -388,14 +391,14 @@
 
     .card-title {
       margin-bottom: 0px;
-      font-size: 30px;
+      font-size: 20px;
       text-align: center;
       color: white;
-      text-shadow: goldenrod 0 0 10px;
+      text-shadow: cyan 0 0 10px;
     }
 
     .card img {
-      width: 100%;
+      width: 90%;
       height: auto;
       max-height: 500px;
       object-fit: contain;
@@ -407,8 +410,8 @@
     }
 
     .card:hover {
-      background: transparent;
-      color: white;
+      background: powderblue;
+      color: black;
       transform: translateY(-10px);
       z-index: 1;
       outline: none;
@@ -462,29 +465,29 @@
         background-image: url(imgs/Untitled\ design\ \(19\).png);
         z-index: 1;
         background-repeat: no-repeat;
-        background-size: 250%;
+        background-size: 150%;
         background-position: center;
-        height: 100vh;
+        height: 70vh;
       }
 
       .circle-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0;
+        padding: 20px;
       }
 
       .circle {
-        width: 0;
-        height: 0;
-        background-color: transparent;
+        width: 100%;
+        height: auto;
+        background-color: white;
 
 
       }
 
       .circle img {
-        width: 0;
-        height: 0;
+        width: 200%;
+        height: auto;
         object-fit: none;
       }
 
@@ -494,8 +497,13 @@
       }
 
       .card {
-        padding: 0.5rem;
-        border: none;
+        padding: 2rem;
+        border: 2px solid powderblue;
+        border-radius: 60px;
+        transform: translateY(10px);
+        transition: 0.5s ease;
+        gap: 2rem;
+
       }
 
       .card-title {
@@ -504,6 +512,10 @@
 
       .card img {
         max-height: 120px;
+      }
+      .card:hover{
+        z-index: 2;
+        transform: translateY(-10px);
       }
     }
 
@@ -638,22 +650,23 @@
   </section>
 
   <section id="Education" class="section slide-in-left">
-    <h2 class="section-title slide-in-left" style="color: goldenrod; text-shadow:0 0 8px goldenrod;">Education</h2>
+    <h2 class="section-title slide-in-left" style="color: rgb(104, 247, 247); text-shadow:0 0 8px white; margin-top: 10rem;">Education</h2>
     <div style="
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
-    padding: 0 1rem;
+    margin-top:  0.5 rem;
+    padding: 2rem 4rem;
   ">
       <div style="
-      border: 1px solid goldenrod;
-      border-radius: 25px;
-      padding: 15px;
+      border: 3px solid cyan;
+      border-radius: 60px;
+      padding: 1rem 3rem;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: rgb(41, 37, 28);
+      background: black;
+
     ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
           Diploma in ML and Deep Learning
@@ -663,12 +676,12 @@
       </div>
 
       <div style="
-      border: 1px solid goldenrod;
-      border-radius: 20px;
-      padding: 15px;
+      border: 3px solid cyan;
+      border-radius: 60px;
+      padding: 1rem 3rem;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: rgb(41, 37, 28);
+      background: black;
 
 ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
@@ -679,12 +692,13 @@
       </div>
 
       <div style="
-      border: 1px solid goldenrod;
-      border-radius: 20px;
-      padding: 15px;
+      border: 3px solid cyan;
+      border-radius: 60px;
+      padding: 1rem 3rem ;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: rgb(41, 37, 28)
+      background: rgb(0, 0, 0);
+
     ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
           Intermediate in Pre-Engineering
@@ -697,7 +711,7 @@
 
 
   <section id="services" class="section slide-in-left">
-    <h2 class="section-title slide-in-left" style="color: goldenrod; text-shadow:0 0 8px goldenrod;">Hobbies</h2>
+    <h2 class="section-title slide-in-left" style="color: rgb(104, 247, 247); text-shadow:0 0 8px white;">Hobbies</h2>
     <div class="card-container">
       <div class="card">
         <h3 class="card-title">Books Reading</h3>
@@ -718,7 +732,7 @@
   </section>
 
   <section id="expertise" class="section slide-in-left">
-    <h2 class="section-title slide-in-left" style="color: goldenrod; text-shadow:0 0 8px goldenrod;">Expertise</h2>
+    <h2 class="section-title slide-in-left" style="color: rgb(104, 247, 247); text-shadow:0 0 8px white;">Expertise</h2>
     <div class="card-container">
       <div class="card">
         <h3 class="card-title">AI Automation</h3>
@@ -738,9 +752,9 @@
         <img src="imgs/math.png" alt="Image 3">
       </div>
   </section>
-  <section id="contact" class="section slide-in-bottom">
-    <h2 class="section-title slide-in-bottom" style="text-shadow:0 0 7px white;">Contact<span
-        style="color: goldenrod; text-shadow:0 0 7px goldenrod;"> Me</h2>
+  <section id="contact" class="section slide-in-bottom" style="padding: 3rem 1rem;">
+    <h2 class="section-title slide-in-bottom" style="text-shadow:0 0 7px white; margin-bottom: 2rem;">Contact<span
+        style="color: cyan; text-shadow:0 0 7px cyan;"> Me</h2>
     <form class="contact-form slide-in-bottom" id="contact-form" action="https://formspree.io/f/manoblnb" method="POST">
       <input type="name" name="name" placeholder="Full Name">
       <input type="email" name="email" placeholder="Email">
@@ -768,7 +782,7 @@
 
         if (response.ok) {
           messageDiv.textContent = 'Thank you! Your message has been sent.';
-          messageDiv.style.color = 'pink';
+          messageDiv.style.color = 'cyan';
           form.reset();
         } else {
           messageDiv.textContent = 'Oops! There was a problem submitting your form.';
@@ -833,7 +847,7 @@
     });
   </script>
 </body>
-<footer class="footer" style="color: rgb(90, 75, 39);">
-  &copy; 2025  All rights reserved. Developer: Aroob Fatima
+<footer class="footer" style="color: grey;">
+  &copy; 2025  All rights reserved. Developed and designed by: Aroob Fatima
 </footer>
 </html>
