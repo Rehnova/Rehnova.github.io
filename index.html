@@ -15,6 +15,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --dark-bg: #000000;
+      --metallic-dark: linear-gradient(145deg, #121214, #070709);
+      --metallic-glow: 0 0 15px #0ff, 0 0 30px #0ff inset;
+      --hover-gradient: linear-gradient(145deg, #00727a, #10ec08);
+      --border-gradient: linear-gradient(30deg, rgb(255, 0, 0), rgb(31, 0, 170));
+      --neon-text: linear-gradient(90deg, #0ff, #f0f);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -32,6 +41,25 @@
       color: white;
       font-family: 'josefin sans', sans-serif;
       overflow-x: hidden;
+    }
+
+    .image-gradient {
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .layer-blur {
+      height: 0;
+      width: 30rem;
+      position: absolute;
+      top: 20%;
+      right: 0;
+      box-shadow: 0 0 700px 15px white;
+      rotate: -30deg;
+      z-index: -1;
     }
 
     .header {
@@ -58,8 +86,10 @@
     }
 
     .nav__logo span {
-      color: rgb(0, 116, 116);
-      text-shadow: 0 1px 4px cyan;
+      background: var(--neon-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 1000;
     }
 
     .nav__toggle {
@@ -91,7 +121,10 @@
     }
 
     .nav__link:hover {
-      color: cyan;
+      background: var(--border-gradient);
+      text-decoration: 0 10px rgb(255, 0, 0) underline;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .nav-backdrop {
@@ -133,31 +166,37 @@
     }
 
     .icon {
-      font-size: 30px;
-      color: white;
+      font-size: 2rem;
+      background: var(--neon-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 1000;
       text-decoration: none;
       align-items: center;
       display: flex;
       gap: 100px;
       transition: transform 0.3s ease, text-shadow 0.3s ease;
-      text-shadow: 0 0 8px cyan;
       margin-left: 2%;
     }
 
     .icon:hover {
       transform: scale(1.4);
-      text-shadow: 0 0 15px cyan, 0 0 25px cyan;
-      color: cyan;
+      color: var(--hover-gradient);
+
     }
 
 
     .intro-text h1 {
-      font-size: 45px;
-      font-weight: 50;
+      font-size: 60px;
+      font-weight: 100;
       margin-top: 2%;
+      padding: 0;
       font-family: 'orbitron', sans-serif;
-      text-shadow: 0 0 8px cyan;
+      background: var(--neon-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     .intro-text h6 {
       font-size: 45px;
       font-weight: 10;
@@ -171,7 +210,7 @@
 
 
     .intro-text p {
-      color: whitesmoke;
+      color: powderblue;
       margin-top: 5%;
       font-family: 'josefin sans', sans-serif;
 
@@ -244,21 +283,15 @@
 
       .intro h2 {
         font-size: 45px;
-        /* Adjust the font size of the first line */
         color: white;
-        /* Adjust the color of the first line */
         line-height: 1.5;
-        /* Adjust the line height for spacing */
         margin-bottom: 0;
-        /* Add some space after the first line */
       }
 
 
       .intro p {
         font-size: 15px;
-        /* Adjust the font size of the paragraph */
         color: whitesmoke;
-        /* Adjust the color of the paragraph */
         max-width: 500px;
         line-height: 1.6;
         margin-bottom: 0px;
@@ -269,7 +302,8 @@
         display: flex;
         width: 100%;
       }
-      .card-title{
+
+      .card-title {
         font-size: 60px;
       }
     }
@@ -301,9 +335,9 @@
     }
 
     .contact-form button {
-      background: rgb(0, 72, 85);
+      background: var(--border-gradient);
       color: white;
-      padding: 0.6rem;
+      padding: 1rem 2rem;
       border: none;
       border-radius: 30px;
       font-weight: bold;
@@ -312,11 +346,11 @@
 
     }
 
-    .contact-form button :hover {
-      background: transparent;
-      color: cyan;
+    .contact-form button:hover {
+      background: var(--border-gradient);
+      color: white;
       transform: translateY(-10px);
-      z-index: 1;
+      z-index: 2;
       outline: none;
       transition: 0.3s ease;
     }
@@ -345,31 +379,23 @@
     }
 
     .buttons .btn {
-      background: rgb(53, 66, 68);
-      color: powderblue;
-      border-radius: 30px;
-      cursor: pointer;
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.6rem;
+      background: var(--border-gradient);
+      color: #000;
+      font-weight: bold;
+      border-radius: 10px;
       text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      transition: 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 1rem;
-      min-width: 120px;
+      box-shadow: 0 0 10px rgb(183, 0, 255), 0 0 20px rgb(0, 81, 255) inset;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .buttons .btn:hover {
-      background: cyan;
-      color: black;
-      transform:  translateY(-10px);
-      z-index: 2;
-      outline:none;
-      transition: 0.3s ease;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgb(2, 180, 211), 0 0 10px rgb(0, 12, 122) inset;
     }
- 
+
     .card-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -382,7 +408,9 @@
       border: 1px solid cyan;
       border-radius: 60px;
       transition: all 0.3s ease;
-      background: transparent;
+      background: var(--metallic-glow);
+      box-shadow: 0 0 10px rgb(0, 89, 255), 0 0 20px rgb(0, 225, 255) inset;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -405,12 +433,12 @@
       object-position: center;
       margin-top: 1rem;
       border-radius: 5px;
-      filter: drop-shadow(0 0 7px white);
+      filter: drop-shadow(0 0 3px white);
       transition: filter 0.3s ease;
     }
 
     .card:hover {
-      background: powderblue;
+      background: var(--border-gradient);
       color: black;
       transform: translateY(-10px);
       z-index: 1;
@@ -513,7 +541,8 @@
       .card img {
         max-height: 120px;
       }
-      .card:hover{
+
+      .card:hover {
         z-index: 2;
         transform: translateY(-10px);
       }
@@ -577,19 +606,22 @@
       .nav__toggle {
         display: flex;
       }
+    }
 
- #typed {
-        color: white;
-        font-weight: bold;
-        font-size: 30px;
-      }
+    #typed {
+      background: var(--neon-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      font-size: 35px;
 
     }
   </style>
 </head>
 
 <body>
-
+  <img class="image-gradient" src="gradient.png" alt="">
+  <div class="layer-blur"></div>
   <header class="header">
     <nav>
       <div class="nav__logo"><span>RUBI </span>ANNE</div>
@@ -619,8 +651,8 @@
         <div class="intro-text slide-in-left">
           <h6>IT'S ME</h6>
           <h1>ANNE</h1>
-<h1><span id="typed"></span></h1>
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+          <h1><span id="typed"></span></h1>
+          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
           <p>Tech-Obsessed, Coding lover and dangerously knowledgeable. If i were a programming language, I'd be Python-
             Elegant, powerful and loved by all.My confidence would make compiler to ignore the syntax errors. And
@@ -630,9 +662,9 @@
             <a href="mailto:RehnovaTechLabs01@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
             <a href="https://instagram.com/chloe_anne01" target="_blank" class="icon"><i
                 class="fab fa-instagram"></i></a>
-                <a href="https://github.com/Rehnova" class="icon" target="_blank">
-  <i class="fab fa-github"></i>
-</a>
+            <a href="https://github.com/Rehnova" class="icon" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
 
             <a href="https://wa.me/923425040554" target="_blank" class="icon"><i class="fab fa-whatsapp"></i></a>
           </div>
@@ -648,9 +680,9 @@
     </div>
     </div>
   </section>
-
   <section id="Education" class="section slide-in-left">
-    <h2 class="section-title slide-in-left" style="color: rgb(104, 247, 247); text-shadow:0 0 8px white; margin-top: 10rem;">Education</h2>
+    <h2 class="section-title slide-in-left"
+      style="color: rgb(104, 247, 247); text-shadow:0 0 8px white; margin-top: 10rem;">Education</h2>
     <div style="
     display: flex;
     flex-wrap: wrap;
@@ -660,12 +692,12 @@
     padding: 2rem 4rem;
   ">
       <div style="
-      border: 3px solid cyan;
+      border: 3px solid rgb(174, 0, 255);
       border-radius: 60px;
       padding: 1rem 3rem;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: black;
+      background: var(--neon-text);
 
     ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
@@ -676,12 +708,13 @@
       </div>
 
       <div style="
-      border: 3px solid cyan;
+      border: 3px solid rgb(174, 0, 255);
       border-radius: 60px;
       padding: 1rem 3rem;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: black;
+            background: var(--neon-text);
+
 
 ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
@@ -692,12 +725,13 @@
       </div>
 
       <div style="
-      border: 3px solid cyan;
+      border: 3px solid rgb(174, 0, 255);
       border-radius: 60px;
       padding: 1rem 3rem ;
       width: 250px;
       backdrop-filter: blur(4px);
-      background: rgb(0, 0, 0);
+            background: var(--neon-text);
+;
 
     ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
@@ -754,7 +788,10 @@
   </section>
   <section id="contact" class="section slide-in-bottom" style="padding: 3rem 1rem;">
     <h2 class="section-title slide-in-bottom" style="text-shadow:0 0 7px white; margin-bottom: 2rem;">Contact<span
-        style="color: cyan; text-shadow:0 0 7px cyan;"> Me</h2>
+        style=" background: var(--neon-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;"> Me</h2>
     <form class="contact-form slide-in-bottom" id="contact-form" action="https://formspree.io/f/manoblnb" method="POST">
       <input type="name" name="name" placeholder="Full Name">
       <input type="email" name="email" placeholder="Email">
@@ -839,7 +876,7 @@
         navBackdrop.classList.remove('active');
       });
     });
-     var typed = new Typed("#typed", {
+    var typed = new Typed("#typed", {
       strings: ["Distinct", "Happy ", "Young", "Optimist"],
       typeSpeed: 60,
       backSpeed: 40,
@@ -848,6 +885,7 @@
   </script>
 </body>
 <footer class="footer" style="color: grey;">
-  &copy; 2025  All rights reserved. Developed and designed by: Aroob Fatima
+  &copy; 2025 All rights reserved. Developed and designed by: Aroob Fatima
 </footer>
+
 </html>
