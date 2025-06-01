@@ -335,19 +335,25 @@
     }
 
     .contact-form button {
-      background: var(--border-gradient);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 30px;
+      position: relative;
+      padding: 0.8em 2.5em;
+      font-size: 1.2rem;
       font-weight: bold;
-      font-size: 1.3rem;
-      font-family: 'josefin sans', sans-serif;
+      color: white;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 12px;
+      background: linear-gradient(270deg, #000000, #1b5780, #ffffff);
+      background-size: 400% 400%;
+      animation: gradientFlow 6s ease infinite;
+      transition: box-shadow 0.2s ease, transform 0.1s ease;
+      z-index: 1;
+      overflow: hidden;
 
     }
 
     .contact-form button:hover {
-      background: var(--border-gradient);
       color: white;
       transform: translateY(-10px);
       z-index: 2;
@@ -379,21 +385,50 @@
     }
 
     .buttons .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.6rem;
-      background: var(--border-gradient);
-      color: #000;
+      position: relative;
+      padding: 0.8em 2.5em;
+      font-size: 1.2rem;
       font-weight: bold;
-      border-radius: 10px;
+      color: white;
+      border: none;
       text-decoration: none;
-      box-shadow: 0 0 10px rgb(183, 0, 255), 0 0 20px rgb(0, 81, 255) inset;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      border-radius: 12px;
+      background: linear-gradient(270deg, #000000, #1b5780, #ffffff);
+      background-size: 400% 400%;
+      animation: gradientFlow 6s ease infinite;
+      transition: box-shadow 0.2s ease, transform 0.1s ease;
+      z-index: 1;
+      overflow: hidden;
+    }
+ .buttons .btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background: inherit;
+      filter: blur(20px);
+      z-index: -1;
+      border-radius: inherit;
+      opacity: 1;
+      transition: opacity 0.2s ease;
     }
 
+
     .buttons .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgb(2, 180, 211), 0 0 10px rgb(0, 12, 122) inset;
+     box-shadow: 0 0 20px #00fff0, 0 0 40px #7f00ff;
+      transform: scale(1.05);
+    }
+
+  .buttons .btn:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    
     }
 
     .card-container {
@@ -438,7 +473,7 @@
     }
 
     .card:hover {
-      background: var(--border-gradient);
+      background: powderblue;
       color: black;
       transform: translateY(-10px);
       z-index: 1;
@@ -692,13 +727,21 @@
     padding: 2rem 4rem;
   ">
       <div style="
-      border: 3px solid rgb(174, 0, 255);
       border-radius: 60px;
       padding: 1rem 3rem;
       width: 250px;
-      backdrop-filter: blur(4px);
-      background: var(--neon-text);
-
+ position: relative;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      background: linear-gradient(2300deg, #0a0a0a, #1a7bb3, #f3f1f1);
+      background-size: 400% 400%;
+      animation: gradientFlow 6s ease infinite;
+      transition: box-shadow 0.4s ease, transform 0.2s ease;
+      z-index: 1;
+      overflow: hidden;
     ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
           Diploma in ML and Deep Learning
@@ -708,13 +751,21 @@
       </div>
 
       <div style="
-      border: 3px solid rgb(174, 0, 255);
       border-radius: 60px;
       padding: 1rem 3rem;
       width: 250px;
-      backdrop-filter: blur(4px);
-            background: var(--neon-text);
-
+ position: relative;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      background: linear-gradient(290deg,#0a0a0a, #1a7bb3, #f3f1f1);
+      background-size: 400% 400%;
+      animation: gradientFlow 6s ease infinite;
+      transition: box-shadow 0.4s ease, transform 0.2s ease;
+      z-index: 1;
+      overflow: hidden;
 
 ">
         <h3 style="margin: 8%; font-size: 1rem; color: white; text-shadow: 0 0 5px goldenrod;">
@@ -725,12 +776,21 @@
       </div>
 
       <div style="
-      border: 3px solid rgb(174, 0, 255);
       border-radius: 60px;
-      padding: 1rem 3rem ;
+      padding: 1rem 3rem;
       width: 250px;
-      backdrop-filter: blur(4px);
-            background: var(--neon-text);
+ position: relative;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      background: linear-gradient(250deg, #0a0a0a, #1a7bb3, #f3f1f1);
+      background-size: 400% 400%;
+      animation: gradientFlow 6s ease infinite;
+      transition: box-shadow 0.4s ease, transform 0.2s ease;
+      z-index: 1;
+      overflow: hidden;
 ;
 
     ">
