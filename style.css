@@ -38,18 +38,6 @@
         margin: 0rem 0rem;
     }
 
-    .bg-circle {
-        position: absolute;
-        top: -150px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        height: 80vh;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(0, 123, 255, 0.6), transparent 70%);
-        filter: blur(100px);
-        z-index: 0;
-    }
 
     nav {
         width: 100%;
@@ -177,7 +165,7 @@
 
     .dropdown-content a:hover {
         color: rgb(170, 118, 255);
-        
+
 
 
     }
@@ -226,8 +214,8 @@
         z-index: 0;
         opacity: 1;
         margin-top: -7rem;
-        rotate: 180deg;
         overflow-x: hidden;
+        rotate: 180deg;
     }
 
     .hero-para {
@@ -251,18 +239,20 @@
         border-radius: 20px;
         height: 10vh;
         padding: 1rem 1rem;
+        margin: 1rem 0rem;
         text-decoration: none;
-        background: rgb(14, 0, 75);
+        background: linear-gradient(45deg, #070709, rgb(186, 186, 246));
         color: rgb(255, 255, 255);
         font-weight: 600;
-        border: 1px solid white;
+        border: 1px solid rgb(134, 134, 134);
         font-size: 1.3rem;
         transition: all 0.3s ease;
     }
-    .hero-para a:hover{
-background: white;
-color: rgb(14, 0, 75);
-transform: scale(1.05);
+
+    .hero-para a:hover {
+        background: white;
+        color: rgb(14, 0, 75);
+        transform: scale(1.05);
     }
 
     .hero h1 {
@@ -321,26 +311,24 @@ transform: scale(1.05);
         width: 100px;
         height: 30px;
         margin: 0rem;
-        background: rgb(58, 0, 166);
+        background: linear-gradient(45deg, #262649, rgb(10, 10, 19));
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
+        border-radius: 20px;
         text-decoration: none;
         color: rgb(255, 255, 255);
         transition: all 0.1s ease;
     }
+
     .section-1 .services a:hover {
         border-top: 1px solid grey;
         border-bottom: 1px solid grey;
-        background: rgb(255, 255, 255);
-color: rgb(58, 0, 166);
 
     }
 
     .section-1 img {
         height: 20vh;
-        filter: drop-shadow(0 0 10px rgb(55, 0, 107));
     }
 
     .section-1 h1 {
@@ -348,6 +336,7 @@ color: rgb(58, 0, 166);
         font-weight: 100;
         font-size: 1.5rem;
         text-align: left;
+
         font-family: 'orbitron';
     }
 
@@ -366,15 +355,16 @@ color: rgb(58, 0, 166);
         padding: 1rem 1rem;
         justify-content: center;
         color: white;
-        background-color: rgb(7, 7, 9,  1) ;
+        background-color: rgb(7, 7, 9, 1);
         height: 80vh;
         align-items: center;
         border-radius: 20px;
         text-align: center;
         transition: all 0.3s ease;
     }
+
     .section-1 .services:hover {
-    background-color:rgb(7, 7, 9,  0.8)  ;
+        background-color: rgb(7, 7, 9, 0.8);
     }
 
     .para-1 {
@@ -460,10 +450,9 @@ color: rgb(58, 0, 166);
         align-items: center;
         text-align: center;
         justify-content: center;
-        background: transparent;
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 8px 8px #1d1d47 inset;
         backdrop-filter: blur(10px);
-        border-top: 1px solid rgb(80, 80, 80);
-        border-right: 1px solid rgb(80, 80, 80);
         border-radius: 20px;
         transition: all 1s ease;
         color: white;
@@ -540,10 +529,9 @@ color: rgb(58, 0, 166);
     .section-3 a {
         padding: 1rem 1rem;
         margin: 1rem 3rem;
-        background-color: rgb(60, 60, 60, 0.3);
-        border-top: 1px solid grey;
-        border-right: 1px solid grey;
-        border-radius: 10px;
+        background: linear-gradient(45deg, #03264f, #070709);
+        border-radius: 20px;
+        border: 1px solid #3b3b3b;
         color: #ffffff;
         text-decoration: none;
         font-weight: 600;
@@ -552,7 +540,7 @@ color: rgb(58, 0, 166);
     }
 
     .section-3 button:hover {
-        background-color: #8d8d8d;
+        transform: scale(1.05);
     }
 
     .section-3 img {
@@ -701,8 +689,9 @@ color: rgb(58, 0, 166);
     .section-5 .crd {
         padding: 3rem 3rem;
         margin: 1rem 1rem;
-        background-color: #070709;
+        background: linear-gradient(45deg, #070709, black, #03264f);
         border-radius: 30px;
+        box-shadow: 8px 8px 8px #03264f inset;
         display: flex;
         flex-direction: column;
     }
@@ -717,8 +706,9 @@ color: rgb(58, 0, 166);
         justify-content: center;
         text-align: center;
     }
+
     .section-5 .crd h1 span {
-justify-content: center;
+        justify-content: center;
     }
 
     .section-5 .crd p {
@@ -785,18 +775,20 @@ justify-content: center;
         align-items: center;
         flex-direction: column;
         text-align: center;
-        background-color: rgb(149, 108, 255);
+        background: #070709;
         gap: 1rem;
     }
 
+
+
     .section-7 h1 {
         font-size: 2rem;
-        color: #000000;
+        color: #ffffff;
     }
 
     .section-7 h2 {
         font-size: 1.5;
-        color: #000000;
+        color: #ffffff;
 
     }
 
@@ -808,10 +800,11 @@ justify-content: center;
     footer {
         height: 60vh;
         display: flex;
-        margin: 0rem 0rem;
-        border-radius: 60px;
-        background-color: #ffffff;
+        margin: 0rem 1rem;
+        background: linear-gradient(90deg, black, black, #383888);
         padding: 2rem 2rem;
+        border-left: 1px solid grey;
+        border-top: 1px solid grey;
         flex-direction: row;
         justify-content: right;
         border-radius: 0px;
@@ -833,6 +826,10 @@ justify-content: center;
         align-items: center;
     }
 
+    footer .container-2 h1 {
+        color: white;
+    }
+
     footer .service-cont {
         display: flex;
         flex-direction: row;
@@ -848,13 +845,13 @@ justify-content: center;
 
     footer .services h1 {
         font: 1rem;
-        color: #000000;
+        color: #ffffff;
 
     }
 
     footer .services a {
         font-size: 1.5rem;
-        color: #000000;
+        color: #fffcfc;
     }
 
     footer .media {
@@ -869,7 +866,7 @@ justify-content: center;
 
     footer .media a {
         font-size: 2rem;
-        color: white;
+        color: rgb(255, 255, 255);
     }
 
     footer .message {
@@ -966,6 +963,13 @@ justify-content: center;
 
     /* for mobiles */
     @media (max-width: 768px) {
+
+
+        header {
+            margin-top: 0rem;
+            background: radial-gradient(circle at top, #3e3eb8, black);
+        }
+
         nav {
             display: flex;
             position: fixed;
@@ -1085,34 +1089,25 @@ justify-content: center;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0rem 2rem;
+            margin: 0rem 0rem;
             gap: 0rem;
             overflow: hidden;
-            height: 120vh;
+            height: 110vh;
         }
 
         .hero-para {
             gap: 0rem;
             display: flex;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
+            background: transparent;
             border-radius: 60px;
             justify-content: center;
-            padding: 0rem 0rem;
+            padding: 0rem 1rem;
         }
 
         .hero video {
-            height: 100vh;
-            width: auto;
-            mix-blend-mode: lighten;
-            rotate: -90deg;
-            position: absolute;
-            object-fit: cover;
-            display: flex;
-            justify-content: left;
-            margin: 0rem -35rem;
-            overflow: hidden;
+            display: none;
         }
 
         .hero h1 {
@@ -1204,10 +1199,11 @@ justify-content: center;
         }
 
         .section-1 .services {
-            border-top: 1px solid rgb(41, 41, 41);
+
             clip-path: none;
             background: transparent;
             border-radius: 60px;
+            box-shadow: 10px 10px 10px #262649 inset;
         }
 
         .section-2 {
@@ -1391,7 +1387,6 @@ justify-content: center;
 
             width: 90vw;
             background-color: #070709;
-            border: 1px solid grey;
             border-radius: 30px;
             display: flex;
             flex-direction: column;
@@ -1400,12 +1395,21 @@ justify-content: center;
         .section-6 {
             height: 190vh;
             overflow-x: hidden;
+            margin: 0rem 0rem;
+            height: min-content;
+        }
+
+        .section-6 img {
+            height: 10vh;
+
         }
 
         .section-6 h1 {
             text-align: center;
             margin: 0rem 1rem;
+            color: white;
         }
+
         .section-6 p {
             font-size: 1.2rem;
         }
@@ -1419,9 +1423,9 @@ justify-content: center;
 
         .section-6 .cards-6 .crds-6 {
             width: 90vw;
-            height: 50vh;
+            height: 30vh;
             overflow-x: hidden;
-
+            border: none;
         }
 
         footer {
@@ -1521,12 +1525,14 @@ justify-content: center;
     .slide-in-right {
         opacity: 1;
         filter: blur(10px);
+        transform: translateX(-60px);
         transition: all 0.5s ease-out;
     }
 
     .slide-in-left {
         opacity: 1;
         filter: blur(10px);
+        transform: translateX(60px);
         transition: all 0.5s ease-out;
     }
 
@@ -1539,22 +1545,10 @@ justify-content: center;
     .visible {
         opacity: 1;
         filter: none;
+        transform: translateY(0px);
     }
 
     .tpyer h3 span {
         color: white;
         font-size: rem;
-    }
-
-    .section-3 .search-box {
-        position: absolute;
-        right: 0;
-        height: 100%;
-        background: white;
-        cursor: pointer;
-        transition: background 0.5s ease;
-    }
-
-    .section-3 .search-box:hover {
-        background: white;
     }
