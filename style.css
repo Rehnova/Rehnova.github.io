@@ -1520,28 +1520,24 @@ justify-content: center;
     .slide-in-right {
         opacity: 1;
         filter: blur(10px);
-        transform: translateX(-60px);
         transition: all 0.5s ease-out;
     }
 
     .slide-in-left {
         opacity: 1;
         filter: blur(10px);
-        transform: translateX(60px);
         transition: all 0.5s ease-out;
     }
 
     .slide-in-bottom {
         opacity: 1;
         filter: blur(10px);
-        transform: translateY(25px);
         transition: all 0.5s ease-out;
     }
 
     .visible {
         opacity: 1;
         filter: none;
-        transform: translateY(0px);
     }
 
     .tpyer h3 span {
