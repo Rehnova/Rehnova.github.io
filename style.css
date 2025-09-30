@@ -1,4 +1,3 @@
-    
     :root {
         --dark-bg: #000000;
         --metallic-dark: linear-gradient(145deg, #121214, #070709);
@@ -61,6 +60,7 @@
         display: flex;
         align-items: center;
         display: flex;
+        border-radius: 60px;
         justify-content: center;
     }
 
@@ -135,7 +135,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         min-width: 250px;
         backdrop-filter: blur(10px);
         background: linear-gradient(45deg, #070709, rgb(10, 10, 82));
@@ -232,9 +232,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 15vw;
+        width: 200px;
         border-radius: 20px;
-        height: 10vh;
+        height: 50px;
         left: 100%;
         margin: 1rem 0rem;
         text-decoration: none;
@@ -243,12 +243,12 @@
         font-weight: 600;
         border: 1px solid rgb(134, 134, 134);
         font-size: 1.3rem;
-        transition: all 0s ease;
+        transition: all 0.3s ease;
     }
 
     .hero-para a:hover {
         background: linear-gradient(30deg, #070709, rgb(128, 128, 237));
-
+        transform: scale(1.03);
     }
 
     .hero h1 {
@@ -311,9 +311,16 @@
     .section-1 h1 {
         color: #ffffff;
         font-weight: 100;
+        font-size: 3rem;
+        text-align: left;
+        font-family: 'orbitron';
+    }
+
+    .section-1 .services h1 {
+        color: #ffffff;
+        font-weight: 100;
         font-size: 1.5rem;
         text-align: left;
-
         font-family: 'orbitron';
     }
 
@@ -324,15 +331,18 @@
         font-size: 1.2rem;
     }
 
+    .section-1 img {
+        height: 40vh;
+    }
+
     .section-1 .services {
         display: flex;
         flex-direction: column;
         margin: 0rem 0rem;
-        gap: 2rem;
+        gap: 1rem;
         padding: 1rem 1rem;
         justify-content: center;
         color: white;
-        background-color: rgb(7, 7, 9, 1);
         height: 80vh;
         align-items: center;
         border-radius: 20px;
@@ -362,88 +372,254 @@
     }
 
     .motion {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         overflow-x: hidden;
-        height: 30vh;
+        height: min-content;
         margin: 1rem 0rem;
-        background-color: transparent;
+
+    }
+
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+
     }
 
     .motion .slider-wrapper {
+        overflow: hidden;
+        white-space: nowrap;
         position: relative;
-        overflow-x: hidden;
-
-        width: 100vw;
-        height: 15vh;
-        margin-top: 2rem;
-        z-index: 10;
     }
+
+    .motion .slider-wrapper:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        background: linear-gradient(to right, rgb(255, 255, 255, 0), rgb(0, 0, 0));
+        content: "";
+        z-index: 2;
+    }
+
+    .motion .slider-wrapper:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        background: linear-gradient(to left, rgb(255, 255, 255, 0), rgb(0, 0, 0));
+        content: "";
+        z-index: 2;
+    }
+
 
     .motion .slider {
-        display: flex;
-        overflow-x: hidden;
-
-        gap: 3rem;
-        transition: none;
-        will-change: transform;
+        animation: 20s slide infinite linear;
+        display: inline-block;
     }
 
-    .motion .card {
-        width: 30vw;
-        background: transparent;
-        overflow-x: hidden;
-        border-radius: 10px;
+    .slider img {
+        height: 100px;
+        margin: 2rem 2rem;
+        margin: 0 20px;
         transition: all 0.3s ease;
     }
 
-
-    .motion .card img {
-        height: 15vh;
-        object-fit: contain;
-        object-position: 80% 50%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .slider img:hover {
+        transform: scale(1.05);
     }
+
+    @media (max-width: 768px) {
+        .motion {
+            margin-top: 5rem;
+        }
+
+
+        .motion .slider img {
+            margin: 0 2rem;
+            height: 10vh;
+        }
+
+
+        .motion .slider-wrapper:before,
+        .motion .slider-wrapper:after {
+            width: 100px;
+        }
+
+        .slider img {
+            height: 10vh;
+        }
+    }
+
+
+
 
     .section-2 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        grid-auto-rows: min-content;
-        background-image: url(pricing-parallax.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        justify-content: center;
-        align-items: center;
-        height: 70vh;
-        margin: 2rem 0rem;
-        flex-direction: row;
+        overflow-x: hidden;
+        height: min-content;
+        margin: 1rem 0rem;
     }
 
-    .section-2 .card {
-        padding: 4rem 3rem;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 8px 8px #1d1d47 inset;
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: all 1s ease;
+    .section-2 h1 {
         color: white;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        margin: 4rem 1rem
+    }
+
+    @keyframes slide2 {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(0%);
+        }
+
+    }
+
+    .section-2 .slider-wrapper {
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        box-sizing: border-box;
+        gap: 0;
+        position: relative;
+    }
+
+    .section-2 .slider-wrapper:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        background: linear-gradient(to right, rgb(255, 255, 255, 0), rgb(0, 0, 0));
+        content: "";
+        z-index: 2;
+    }
+
+    .section-2 .slider-wrapper:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        background: linear-gradient(to left, rgb(255, 255, 255, 0), rgb(0, 0, 0));
+        content: "";
+        z-index: 2;
     }
 
 
-    .section-2 .card:hover {
-        backdrop-filter: blur(10px);
+    .section-2 .slider {
+        animation: 60s slide2 infinite linear;
+        display: inline-block;
     }
 
-    .section-2 .card img {
-        height: 20vh;
+    .slider img {
+        height: 80px;
+        margin: 0 5rem;
+        border-radius: 20px;
 
     }
+
+
+    .section-2a {
+        overflow-x: hidden;
+        height: min-content;
+        margin: 1rem 0rem;
+    }
+
+
+    .section-2a .slider-wrapper {
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        box-sizing: border-box;
+        gap: 0;
+        position: relative;
+    }
+
+    .section-2a .slider-wrapper:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        background: linear-gradient(to right, rgb(255, 255, 255, 0), rgb(0, 0, 0));
+        content: "";
+        z-index: 2;
+    }
+
+    .section-2a .slider-wrapper:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        background: linear-gradient(to left, rgb(255, 255, 255, 0), rgb(0, 0, 0));
+        content: "";
+        z-index: 2;
+    }
+
+
+    .section-2a .slider {
+        animation: 60s slide infinite linear;
+        display: inline-block;
+    }
+
+    .slider img {
+        height: 80px;
+        margin: 0 5rem;
+        border-radius: 20px;
+
+    }
+
+    @media (max-width: 768px) {
+        .slider img {
+            height: 10vh;
+        }
+
+        .section-2a {
+            margin: 3rem 0rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-2 h1 {
+            font-size: 2rem;
+            color: white;
+            margin: 0rem 0rem 2rem 0rem;
+        }
+
+        .section-2 .slider-wrapper:before,
+        .section-2 .slider-wrapper:after {
+            width: 100px;
+        }
+
+        .section-2a .slider-wrapper:before,
+        .section-2a .slider-wrapper:after {
+            width: 100px;
+        }
+
+        .slider img {
+            height: 60px;
+        }
+
+        .section-2 img {
+            margin: 1rem 2rem;
+        }
+
+        .section-2a img {
+            margin: 0rem 2rem;
+        }
+    }
+
 
     .section-3 {
         margin: 3rem 0rem;
@@ -464,7 +640,6 @@
         position: absolute;
         width: 100%;
         height: 50px;
-        /* Adjust height of the fade margin */
         z-index: 1;
     }
 
@@ -644,7 +819,7 @@
         flex-direction: column;
     }
 
-   
+
 
     .section-5 .cards {
         display: grid;
@@ -704,8 +879,9 @@
         flex-direction: row;
         align-items: center;
     }
+
     .section-5 h1,
-    .section-6 h1{
+    .section-6 h1 {
         color: white;
         font-size: 4rem;
     }
@@ -728,7 +904,16 @@
 
     .crds-6 img {
         height: 20vh;
+    filter: brightness(60%);
+
     }
+    .section-6 .cards-6 .crds-6:hover img {
+        filter: brightness(100%);
+    }
+    .section-6 .cards-6 .crds-6:hover  {
+        box-shadow: 0 0 50px #0e0e13 inset;
+    }
+
 
     .crds-6 h1 {
         font-size: 2rem;
@@ -774,15 +959,16 @@
         width: 200px;
         background: linear-gradient(180deg, rgb(8, 9, 24), white);
     }
-.section-7 button:hover{
-    background: linear-gradient(180deg, rgb(0, 0, 0), white);
-}
+
+    .section-7 button:hover {
+        background: linear-gradient(180deg, rgb(0, 0, 0), white);
+    }
 
     footer {
         height: 60vh;
         display: flex;
         margin: 0rem 1rem;
-        background: url(hero\ rings\ icon.png) no-repeat left,linear-gradient(90deg, #000000, #000000, #383888) ;
+        background: url(hero\ rings\ icon.png) no-repeat left, linear-gradient(90deg, #000000, #000000, #383888);
         padding: 2rem 2rem;
         border-left: 1px solid grey;
         border-top: 1px solid grey;
@@ -837,6 +1023,7 @@
         font-family: 'sans serif';
         text-decoration: none;
     }
+
     footer .services a:hover {
         color: #606060;
     }
@@ -845,7 +1032,7 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
-margin: 2rem 0rem;
+        margin: 2rem 0rem;
     }
 
     footer .media h1 {
@@ -855,12 +1042,13 @@ margin: 2rem 0rem;
     footer .media a {
         font-size: 2rem;
         color: rgb(255, 255, 255);
-        
+
     }
+
     footer .media a:hover {
         font-size: 2rem;
         color: rgb(81, 81, 81);
-        
+
     }
 
     footer .message {
@@ -892,16 +1080,7 @@ margin: 2rem 0rem;
             margin-top: 1rem;
         }
 
-        .motion {
-            overflow: hidden;
-            height: 20vh;
-            margin: 3rem 0rem;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-            background-color: transparent;
-            overflow-x: hidden;
-        }
+
 
         .pc-cards {
             display: flex;
@@ -953,6 +1132,10 @@ margin: 2rem 0rem;
             overflow-x: hidden;
             margin: 0rem 0rem;
         }
+
+        .section-6 h1 {
+            margin: 0rem 2rem;
+        }
     }
 
     /* for mobiles */
@@ -987,6 +1170,7 @@ margin: 2rem 0rem;
 
         .logo img {
             height: 5vh;
+            border-radius: 60px;
         }
 
         .nav__list {
@@ -1009,41 +1193,69 @@ margin: 2rem 0rem;
 
         .nav__list.active {
             display: flex;
+            width: min-content;
             backdrop-filter: blur(10px);
-            width: 100vw;
             background-color: rgb(255, 255, 255, 0.3);
-            height: 40vh;
+            height: 20vh;
+            flex-direction: row;
+            padding: 0;
+            gap: 0rem;
         }
 
         .nav__link {
             text-decoration: none;
             display: flex;
+            flex-direction: column;
             color: rgb(0, 0, 0);
             font-weight: 600;
             position: relative;
             font-weight: 300;
             border: none;
+            font-size: 1rem;
             border-radius: 0;
             box-shadow: none;
-height: min-content;
+            margin: 0rem 1rem;
+            padding: 0;
+            height: min-content;
             background-color: transparent;
             backdrop-filter: blur(0px);
         }
 
 
         .dropdown-content {
-            position: relative;
-            flex-direction: column;
-            padding: 0.5rem 1rem;
-            color: rgb(0, 0, 0);
-            border-color: 0 0 5px rgb(43, 43, 43);
-            backdrop-filter: blur(20px);
-            align-items: center;
-            height: 50vh;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 1rem;
+        width: max-content;
+         backdrop-filter: blur(10px);
+            background: rgb(255, 255, 255, 0.3);
+        border-radius: 20px;
+        border: 1px solid rgb(0, 0, 0);
+        padding: 0.5rem ;
+        transition: 3s ease-in;
+        gap: 1rem;
+    }
+
+    .dropdown-content a {
+        display: block;
+        font-family: 'josefin sans';
+        font-weight: 350;
+        position: relative;
+        margin: 1rem 0rem;
+        padding: 0rem 0rem;
+        border-radius: 20px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        transition: 0s ease-in;
+    }
+
+        .dropdown:hover .dropdown-content {
+            max-height: 100vw;
         }
 
         nav .dropdown-icons {
-            display: flex;
+            display: none;
             flex-direction: row;
             justify-content: left;
             font-size: 1.5rem;
@@ -1051,17 +1263,7 @@ height: min-content;
             color: white;
 
         }
-
-
-        .dropdown-icons a {
-            color: rgb(255, 255, 255);
-        }
-
-
-        .dropdown-content a {
-            color: rgb(0, 0, 0);
-        }
-
+       
 
 
         .dropdown:hover .dropdown-content {
@@ -1070,8 +1272,9 @@ height: min-content;
 
         .dropdown.open .dropdown-content {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
+            gap: 0rem;
         }
 
         .nav__toggle {
@@ -1105,7 +1308,8 @@ height: min-content;
             padding: 0rem 1rem;
             text-align: center;
         }
-        .hero p{
+
+        .hero p {
             width: 80vw;
         }
 
@@ -1143,43 +1347,6 @@ height: min-content;
             display: none;
         }
 
-        .motion {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 10vh;
-            margin: 3rem 0rem;
-            background-color: transparent;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-
-        .motion .slider-wrapper {
-            position: relative;
-            width: 100%;
-            height: 15vh;
-            z-index: 10;
-        }
-
-        .motion .slider {
-            display: flex;
-            gap: 5rem;
-            transition: none;
-            height: 10vh;
-        }
-
-        .motion .card {
-            width: 10vw;
-            height: 10vh;
-            background: transparent;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-
-        .motion .card img {
-            height: 10vh;
-        }
 
 
 
@@ -1192,6 +1359,14 @@ height: min-content;
             margin: 3rem 1rem;
         }
 
+        .section-1 h1 {
+            font-size: 2rem;
+            color: white;
+            margin-top: 3rem;
+            text-align: center;
+            justify-content: center;
+        }
+
         .section-1 .services a {
             width: 100px;
             height: 50px;
@@ -1202,33 +1377,33 @@ height: min-content;
         }
 
         .section-1 .services {
-
+            height: fit-content;
             clip-path: none;
             background: transparent;
-            border-radius: 60px;
-            box-shadow: 10px 10px 10px #262649 inset;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px #262649 inset;
+        }
+
+        .section-1 .services h1 {
+            margin: 0;
+            font-size: 1.5rem;
         }
 
         .section-2 {
-            height: 70vh;
-            margin-top: 1rem;
+            height: min-content;
+            margin-top: 5rem;
             gap: 1rem;
             overflow-x: hidden;
         }
 
-        .section-2 .card {
-            padding: 2rem 0rem;
-            height: 30vh;
-            margin: 0rem 0rem;
-        }
+
 
         .section-2 h1 {
-            font-size: 1rem;
+            font-size: 3rem;
+            text-align: center;
         }
 
-        .section-2 .card img {
-            height: 10vh;
-        }
+
 
         .section-3 {
             background-size: cover;
@@ -1364,7 +1539,7 @@ height: min-content;
             flex-direction: column;
         }
 
-       
+
 
         .section-5 .cards {
             display: flex;
@@ -1398,7 +1573,8 @@ height: min-content;
             height: 10vh;
 
         }
-.section-5 h1,
+
+        .section-5 h1,
         .section-6 h1 {
             text-align: center;
             margin: 0rem 1rem;
@@ -1424,7 +1600,7 @@ height: min-content;
         }
 
         footer {
-            height: 80vh;
+            height: max-content;
             display: flex;
             padding: 2rem 2rem;
             border-radius: 0px;
@@ -1452,11 +1628,11 @@ height: min-content;
         }
 
         footer .services h1 {
-            font-size: 1.7rem;
+            font-size: 1rem;
         }
 
         footer .services a {
-            font-size: 1.5rem;
+            font-size: 0.8rem;
         }
 
         footer .container-2 .media {
@@ -1513,6 +1689,14 @@ height: min-content;
         .section-3 {
             overflow-x: hidden;
         }
+    }
+
+    @media (min-width: 769px) and (max-width: 1230px) {
+        .pc-cards video {
+            height: 40vh;
+            border-radius: 60px;
+        }
+
     }
 
 
